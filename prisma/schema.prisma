@@ -1,0 +1,136 @@
+datasource db {
+  provider = "sqlite"
+}
+
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+model User {
+  id           String           @id @default(uuid())
+  name         String
+  email        String           @unique
+  passwordHash String?
+  avatarUrl    String?
+  role         String           @default("USER")
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  connections  DataConnection[]
+  page         Page?
+  subscription Subscription?
+  sessions     Session[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model DataConnection {
+  id               String   @id @default(uuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name             String
+  type             String   // 'POSTGRESQL', 'MYSQL', 'GOOGLESHEETS', 'CSV_PARQUET_FILE'
+  connectionString String?  // Criptografado
+  fileUrl          String?
+  sheetUrl         String?
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  widgets          Widget[]
+}
+
+model Page {
+  id          String     @id @default(uuid())
+  userId      String     @unique
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  username    String     @unique
+  publicName  String
+  bio         String?
+  avatarUrl   String?
+  themeId     String     @default("sleek-dark")
+  isPublished Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  folders     Folder[]
+  widgets     Widget[]
+  views       PageView[]
+}
+
+model Folder {
+  id         String   @id @default(uuid())
+  pageId     String
+  page       Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  name       String
+  slug       String
+  sortOrder  Int      @default(0)
+  isActive   Boolean  @default(true)
+  aiSummary  String?  // Resumo da última análise da IA
+  aiInsights String?  // JSON array de insights da IA
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  widgets    Widget[]
+}
+
+
+model Widget {
+  id              String             @id @default(uuid())
+  pageId          String
+  page            Page               @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  folderId        String?
+  folder          Folder?            @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  connectionId    String?
+  connection      DataConnection?    @relation(fields: [connectionId], references: [id], onDelete: SetNull)
+  title           String
+  type            String             // 'KPI_CARD', 'LINE_CHART', 'BAR_CHART', 'PIE_CHART', 'TABLE'
+  query           String?            // Query SQL ou strings de mapeamento JSON
+  refreshInterval Int                @default(60) // minutos
+  cachedData      String?            // JSON serializado contendo o cache de dados
+  lastRefreshed   DateTime?
+  sortOrder       Int                @default(0)
+  isActive        Boolean            @default(true)
+  allowDownload   Boolean            @default(true)
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  exportClicks    DataExportClick[]
+}
+
+model PageView {
+  id         String   @id @default(uuid())
+  pageId     String
+  page       Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  folderId   String?
+  ipHash     String?
+  userAgent  String?
+  accessedAt DateTime @default(now())
+}
+
+model DataExportClick {
+  id        String   @id @default(uuid())
+  widgetId  String
+  widget    Widget   @relation(fields: [widgetId], references: [id], onDelete: Cascade)
+  clickedAt DateTime @default(now())
+}
+
+model Subscription {
+  id                    String   @id @default(uuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planType              String   // 'FREE', 'PRO', 'ENTERPRISE'
+  status                String   // 'ACTIVE', 'PAST_DUE', 'CANCELED', 'TRIALING'
+  gatewayCustomerId     String?
+  gatewaySubscriptionId String?
+  currentPeriodEnd      DateTime?
+  tokensUsed            Int      @default(0)  // Tokens consumidos no mês
+  tokenLimit            Int      @default(50000) // Limite mensal de tokens (0 = ilimitado para admin)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+

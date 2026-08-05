@@ -1,0 +1,11 @@
+[
+  { "id": "PED-01", "cliente": "Empresa A", "valor": 1250.0, "status": "Pago", "data": "2026-07-01", "itens": "Software Licença anual", "categoria": "Infra", "vencimento": "2026-07-05", "pago": true },
+  { "id": "PED-02", "cliente": "Marcos Souza", "valor": 350.0, "status": "Pendente", "data": "2026-07-02", "itens": "Curso Avançado de Growth", "categoria": "Marketing", "vencimento": "2026-07-10", "pago": false },
+  { "id": "PED-03", "cliente": "Carla Clara", "valor": 2500.0, "status": "Pago", "data": "2026-07-03", "itens": "Mentoria BI & Data", "categoria": "Serviços", "vencimento": "2026-07-03", "pago": true },
+  { "id": "PED-04", "cliente": "Empresa B", "valor": 4200.0, "status": "Pago", "data": "2026-07-04", "itens": "Consultoria Analítica", "categoria": "Serviços", "vencimento": "2026-07-15", "pago": true },
+  { "id": "PED-05", "cliente": "Gabriela Dias", "valor": 350.0, "status": "Pendente", "data": "2026-07-05", "itens": "Curso Avançado de Growth", "categoria": "Marketing", "vencimento": "2026-07-15", "pago": false },
+  { "id": "PED-06", "cliente": "Empresa C", "valor": 1800.0, "status": "Cancelado", "data": "2026-07-05", "itens": "Treinamento Metrika", "categoria": "Treinamento", "vencimento": "2026-07-05", "pago": false },
+  { "id": "PED-07", "cliente": "Roberto Santos", "valor": 1250.0, "status": "Pago", "data": "2026-07-06", "itens": "Software Licença anual", "categoria": "Infra", "vencimento": "2026-07-06", "pago": true },
+  { "id": "PED-08", "cliente": "Juliana Neves", "valor": 2500.0, "status": "Pago", "data": "2026-07-07", "itens": "Mentoria BI & Data", "categoria": "Serviços", "vencimento": "2026-07-07", "pago": true },
+  { "id": "PED-09", "cliente": "Empresa D", "valor": 850.0, "status": "Pendente", "data": "2026-07-08", "itens": "Treinamento Metrika", "categoria": "Treinamento", "vencimento": "2026-07-20", "pago": false }
+]

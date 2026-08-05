@@ -1,0 +1,17 @@
+[
+  { "id": 1, "nome": "Carlos Souza", "email": "carlos@gmail.com", "canal": "Google Ads", "data": "2026-07-01", "status": "Convertido", "spend": 45.0, "clicks": 12, "ctr": 2.5, "cpc": 3.75 },
+  { "id": 2, "nome": "Carla Lima", "email": "ana.lima@hotmail.com", "canal": "Facebook Ads", "data": "2026-07-01", "status": "Pendente", "spend": 32.5, "clicks": 20, "ctr": 3.1, "cpc": 1.62 },
+  { "id": 3, "nome": "Juliana Santos", "email": "juli@outlook.com", "canal": "Orgânico", "data": "2026-07-02", "status": "Convertido", "spend": 0.0, "clicks": 5, "ctr": 1.2, "cpc": 0.0 },
+  { "id": 4, "nome": "Marcos Silva", "email": "marcos@empresa.com", "canal": "Google Ads", "data": "2026-07-02", "status": "Descartado", "spend": 50.0, "clicks": 15, "ctr": 2.1, "cpc": 3.33 },
+  { "id": 5, "nome": "Renata Costa", "email": "renata.c@yahoo.com", "canal": "E-mail", "data": "2026-07-03", "status": "Convertido", "spend": 5.0, "clicks": 35, "ctr": 8.5, "cpc": 0.14 },
+  { "id": 6, "nome": "Lucas Martins", "email": "lucas.m@gmail.com", "canal": "Facebook Ads", "data": "2026-07-03", "status": "Pendente", "spend": 28.0, "clicks": 18, "ctr": 2.9, "cpc": 1.55 },
+  { "id": 7, "nome": "Patricia Oliveira", "email": "patty@bol.com.br", "canal": "Orgânico", "data": "2026-07-04", "status": "Convertido", "spend": 0.0, "clicks": 8, "ctr": 1.5, "cpc": 0.0 },
+  { "id": 8, "nome": "Bruno Fonseca", "email": "bruno@gmail.com", "canal": "Google Ads", "data": "2026-07-04", "status": "Convertido", "spend": 60.0, "clicks": 14, "ctr": 2.8, "cpc": 4.28 },
+  { "id": 9, "nome": "Camila Araujo", "email": "camila.a@gmail.com", "canal": "Instagram", "data": "2026-07-05", "status": "Convertido", "spend": 22.0, "clicks": 25, "ctr": 4.2, "cpc": 0.88 },
+  { "id": 10, "nome": "Felipe Castro", "email": "felipe.c@gmail.com", "canal": "E-mail", "data": "2026-07-05", "status": "Pendente", "spend": 5.0, "clicks": 40, "ctr": 9.2, "cpc": 0.12 },
+  { "id": 11, "nome": "Gabriela Mendes", "email": "gabi.m@gmail.com", "canal": "Facebook Ads", "data": "2026-07-06", "status": "Convertido", "spend": 35.0, "clicks": 22, "ctr": 3.3, "cpc": 1.59 },
+  { "id": 12, "nome": "Thiago Rocha", "email": "thiago@gmail.com", "canal": "Google Ads", "data": "2026-07-06", "status": "Pendente", "spend": 40.0, "clicks": 10, "ctr": 2.0, "cpc": 4.0 },
+  { "id": 13, "nome": "Amanda Reis", "email": "amanda@gmail.com", "canal": "Orgânico", "data": "2026-07-07", "status": "Convertido", "spend": 0.0, "clicks": 7, "ctr": 1.4, "cpc": 0.0 },
+  { "id": 14, "nome": "Rodrigo Neves", "email": "rodrigo@gmail.com", "canal": "Google Ads", "data": "2026-07-07", "status": "Convertido", "spend": 55.0, "clicks": 16, "ctr": 2.9, "cpc": 3.43 },
+  { "id": 15, "nome": "Larissa Dias", "email": "larissa@gmail.com", "canal": "Instagram", "data": "2026-07-08", "status": "Convertido", "spend": 30.0, "clicks": 32, "ctr": 4.8, "cpc": 0.93 }
+]

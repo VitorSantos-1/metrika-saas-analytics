@@ -1,0 +1,541 @@
+@import "tailwindcss";
+
+/* ============================================================
+   METRIKA — SISTEMA DE DESIGN VIVO
+   "Dados em movimento, tecnologia em evidência"
+   ============================================================ */
+
+/* 1. Tema Padrão / Sleek Dark (Escuro Premium) */
+:root, [data-theme="sleek-dark"] {
+  --background: 224 39% 7%;
+  --foreground: 220 14% 96%;
+  --card: 224 39% 10%;
+  --card-foreground: 220 14% 98%;
+  --border: 224 39% 16%;
+  --primary: 188 86% 53%;
+  --primary-foreground: 224 39% 6%;
+  --muted: 224 39% 16%;
+  --muted-foreground: 220 14% 65%;
+  --accent: 258 90% 66%;
+  --accent-foreground: 220 14% 98%;
+  
+  --chart-1: 188 86% 53%;
+  --chart-2: 258 90% 66%;
+  --chart-3: 25 95% 53%;
+  --chart-4: 162 76% 41%;
+  --chart-5: 330 85% 60%;
+  --glow: 188 86% 53%;
+  --glow-rgb: 34, 211, 238;
+  --font-family-theme: var(--font-geist-sans), sans-serif;
+
+  --dot-color: rgba(34, 211, 238, 0.08);
+  --ambient-1: rgba(34, 211, 238, 0.04);
+  --ambient-2: rgba(139, 92, 246, 0.03);
+}
+
+/* 2. Tema Claro Corporativo (Clean Business) */
+[data-theme="clean-business"] {
+  --background: 220 20% 97%;
+  --foreground: 224 39% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 39% 8%;
+  --border: 220 13% 82%;
+  --primary: 224 64% 33%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 220 13% 91%;
+  --muted-foreground: 220 14% 35%;
+  --accent: 162 76% 35%;
+  --accent-foreground: 0 0% 100%;
+
+  --chart-1: 224 64% 33%;
+  --chart-2: 162 76% 35%;
+  --chart-3: 220 14% 30%;
+  --chart-4: 35 92% 45%;
+  --chart-5: 217 91% 50%;
+  --glow: 224 64% 33%;
+  --glow-rgb: 30, 64, 175;
+  --font-family-theme: var(--font-geist-sans), sans-serif;
+
+  --dot-color: rgba(30, 64, 175, 0.06);
+  --ambient-1: rgba(30, 64, 175, 0.03);
+  --ambient-2: rgba(16, 185, 129, 0.02);
+}
+
+/* 3. Tema Cyberpunk Analytics */
+[data-theme="cyberpunk"] {
+  --background: 0 0% 0%;
+  --foreground: 144 100% 50%;
+  --card: 0 0% 3%;
+  --card-foreground: 144 100% 60%;
+  --border: 330 100% 50%;
+  --primary: 292 84% 61%;
+  --primary-foreground: 0 0% 0%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 144 100% 40%;
+  --accent: 48 96% 53%;
+  --accent-foreground: 0 0% 0%;
+
+  --chart-1: 144 100% 50%;
+  --chart-2: 330 100% 50%;
+  --chart-3: 48 96% 53%;
+  --chart-4: 188 100% 50%;
+  --chart-5: 271 91% 65%;
+  --glow: 330 100% 50%;
+  --glow-rgb: 255, 0, 128;
+  --font-family-theme: var(--font-geist-mono), monospace;
+
+  --dot-color: rgba(0, 255, 128, 0.07);
+  --ambient-1: rgba(255, 0, 128, 0.05);
+  --ambient-2: rgba(0, 255, 128, 0.04);
+}
+
+/* 4. Tema Emerald Growth (Foco Financeiro) */
+[data-theme="emerald-growth"] {
+  --background: 153 60% 5%;
+  --foreground: 150 60% 96%;
+  --card: 153 55% 8%;
+  --card-foreground: 150 60% 98%;
+  --border: 153 66% 16%;
+  --primary: 162 76% 41%;
+  --primary-foreground: 153 60% 4%;
+  --muted: 153 66% 16%;
+  --muted-foreground: 150 40% 70%;
+  --accent: 35 84% 44%;
+  --accent-foreground: 150 60% 98%;
+
+  --chart-1: 162 76% 41%;
+  --chart-2: 48 96% 53%;
+  --chart-3: 153 76% 25%;
+  --chart-4: 200 10% 70%;
+  --chart-5: 147 70% 60%;
+  --glow: 162 76% 41%;
+  --glow-rgb: 16, 185, 129;
+  --font-family-theme: var(--font-geist-sans), sans-serif;
+
+  --dot-color: rgba(16, 185, 129, 0.07);
+  --ambient-1: rgba(16, 185, 129, 0.04);
+  --ambient-2: rgba(245, 158, 11, 0.03);
+}
+
+/* 5. Tema Oceanic Insight (Design Moderno e Calmo) */
+[data-theme="oceanic"] {
+  --background: 219 51% 6%;
+  --foreground: 203 89% 94%;
+  --card: 219 51% 10%;
+  --card-foreground: 203 89% 98%;
+  --border: 219 51% 18%;
+  --primary: 188 86% 53%;
+  --primary-foreground: 219 51% 5%;
+  --muted: 219 51% 18%;
+  --muted-foreground: 203 50% 75%;
+  --accent: 217 91% 60%;
+  --accent-foreground: 203 89% 98%;
+
+  --chart-1: 188 86% 53%;
+  --chart-2: 217 91% 60%;
+  --chart-3: 271 91% 75%;
+  --chart-4: 195 85% 65%;
+  --chart-5: 231 66% 60%;
+  --glow: 217 91% 60%;
+  --glow-rgb: 59, 130, 246;
+  --font-family-theme: var(--font-geist-sans), sans-serif;
+
+  --dot-color: rgba(56, 189, 248, 0.07);
+  --ambient-1: rgba(59, 130, 246, 0.04);
+  --ambient-2: rgba(139, 92, 246, 0.03);
+}
+
+/* ============================================================
+   TAILWIND THEME TOKENS
+   ============================================================ */
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* === ANIMAÇÕES === */
+  --animate-pulse-glow: pulse-glow 2.5s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scanline: scanline 3s linear infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-border-flow: border-flow 3s linear infinite;
+  --animate-count-up: count-up 1s ease-out forwards;
+  --animate-live-dot: live-dot 1.4s ease-in-out infinite;
+  --animate-data-stream: data-stream 8s linear infinite;
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 4px rgba(var(--glow-rgb), 0.15), 0 0 0px rgba(var(--glow-rgb), 0);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(var(--glow-rgb), 0.5), 0 0 40px rgba(var(--glow-rgb), 0.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes border-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes live-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  @keyframes data-stream {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  @keyframes slide-in-active {
+    from { opacity: 0; transform: translateX(-6px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes bar-grow {
+    from { width: 0%; }
+    to { width: var(--bar-target, 70%); }
+  }
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-family-theme);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  /* Grid de pontos sutil como textura de fundo */
+  background-image: radial-gradient(
+      circle,
+      var(--dot-color) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+}
+
+/* Gradientes de luz ambiente que dão profundidade ao fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 10% 10%, var(--ambient-1), transparent),
+    radial-gradient(ellipse 50% 50% at 90% 80%, var(--ambient-2), transparent);
+}
+
+/* Garante que todo conteúdo fique acima dos pseudo-elementos */
+#__next, main, aside, header, footer, [data-radix-portal] {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   GLASS PANELS
+   ============================================================ */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="clean-business"] .glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* ============================================================
+   UTILITÁRIOS DE EFEITO VISUAL
+   ============================================================ */
+
+/* Borda que brilha na cor primária */
+.glow-border {
+  border: 1px solid hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.08),
+              inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glow-border:hover {
+  border-color: hsl(var(--primary) / 0.55);
+  box-shadow: 0 0 16px rgba(var(--glow-rgb), 0.2),
+              0 0 0 1px hsl(var(--primary) / 0.15),
+              inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Dot pulsante ao vivo */
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.live-indicator::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: live-ping 1.4s ease-in-out infinite;
+}
+
+@keyframes live-ping {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+  60% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Shimmer de loading / highlight */
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--glow-rgb), 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Contador animado */
+.count-animate {
+  animation: count-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Barra de progresso animada */
+.progress-bar {
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  animation: bar-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+/* Badge LIVE animado */
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-live::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: live-ping 1.4s ease-in-out infinite;
+}
+
+/* Stream de dados horizontal */
+.data-stream-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--glow-rgb), 0.15),
+    transparent
+  );
+  animation: data-stream 3s ease-in-out infinite;
+}
+
+/* KPI card gradient diagonal */
+.kpi-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--glow-rgb), 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.kpi-card:hover::before {
+  opacity: 2;
+}
+
+/* Sidebar item ativo — borda lateral animada */
+.nav-active-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--accent)));
+  box-shadow: 0 0 8px rgba(var(--glow-rgb), 0.5);
+}
+
+/* Terminal cursor piscante */
+.terminal-cursor::after {
+  content: "█";
+  font-size: 0.75em;
+  margin-left: 2px;
+  color: hsl(var(--primary));
+  animation: live-dot 0.8s step-end infinite;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.25);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.45);
+}
+
+/* ============================================================
+   TICKER / STATUS BAR
+   ============================================================ */
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  gap: 48px;
+  animation: ticker-scroll 18s linear infinite;
+}
+
+.ticker-inner:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   CARD HOVER LIFT
+   ============================================================ */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px -8px rgba(var(--glow-rgb), 0.15);
+}
+
+/* ============================================================
+   CYBERPUNK OVERRIDES (torna ainda mais radical)
+   ============================================================ */
+[data-theme="cyberpunk"] body,
+[data-theme="cyberpunk"] .glass-panel {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+[data-theme="cyberpunk"] .glow-border:hover {
+  box-shadow: 0 0 24px rgba(255, 0, 128, 0.35),
+              0 0 48px rgba(255, 0, 128, 0.1);
+}
