@@ -2,17 +2,21 @@
 title Metrika - Iniciando...
 chcp 65001 >nul
 
-cd /d "C:\Users\Usuário\Desktop\metrika"
+set "PROJ=C:\Users\Usuário\OneDrive\Pessoais\Documentos\minha_pasta\Projetos\mini_saas_metrika"
+set "NODE_EXE=C:\Program Files\nodejs\node.exe"
 
-set NODE_EXE=C:\Users\Usuário\AppData\Local\ms-playwright-go\1.57.0\node.exe
+cd /d "%PROJ%"
 
 :: Verifica se o servidor ja esta rodando
-powershell -Command "try { Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 1 -UseBasicParsing | Out-Null; exit 0 } catch { exit 1 }" >nul 2>&1
-if %errorlevel% == 0 (
+powershell -NoProfile -Command "try { Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 1 -UseBasicParsing | Out-Null; exit 0 } catch { exit 1 }" >nul 2>&1
+if %errorlevel%==0 (
     echo Servidor ja esta rodando! Abrindo navegador...
     start http://localhost:3000
-    exit
+    exit /b
 )
+
+:: Limpa o cache do Turbopack (o OneDrive costuma corromper o .next e derrubar o servidor)
+if exist ".next" rd /s /q ".next"
 
 :: Inicia o servidor em janela separada
 echo Iniciando servidor Metrika...
@@ -24,12 +28,14 @@ set /a count=0
 
 :loop
 timeout /t 2 /nobreak >nul
-powershell -Command "try { Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 2 -UseBasicParsing | Out-Null; exit 0 } catch { exit 1 }" >nul 2>&1
-if %errorlevel% == 0 goto abrir
+powershell -NoProfile -Command "try { Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 2 -UseBasicParsing | Out-Null; exit 0 } catch { exit 1 }" >nul 2>&1
+if %errorlevel%==0 goto abrir
 set /a count+=1
-if %count% lss 20 goto loop
+if %count% lss 30 goto loop
+
+echo Nao consegui confirmar o servidor, mas vou tentar abrir mesmo assim...
 
 :abrir
 echo Abrindo navegador...
 start http://localhost:3000
-exit
+exit /b
