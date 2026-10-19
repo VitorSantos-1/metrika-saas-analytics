@@ -106,5 +106,5 @@ public/data/             -> Dados de exemplo (fictícios)
 
 ## Autor
 
-José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo e Supply Chain).
+José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo, Indústria e Distribuição).
 Contato: vytorsantt@gmail.com
