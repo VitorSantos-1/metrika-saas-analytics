@@ -108,3 +108,80 @@ public/data/             -> Dados de exemplo (fictícios)
 
 José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo, Indústria e Distribuição).
 Contato: vytorsantt@gmail.com
+
+## 🗺️ Modelo de Dados (DER)
+
+Esquema do micro-SaaS de dashboards (Prisma / PostgreSQL). Renderizado pelo GitHub via Mermaid. *Dados de demonstração fictícios.*
+
+```mermaid
+erDiagram
+    User ||--o{ Session : "tem"
+    User ||--o{ DataConnection : "conecta"
+    User ||--o| Page : "publica (1:1)"
+    User ||--o| Subscription : "assina (1:1)"
+    Page ||--o{ Folder : "organiza"
+    Page ||--o{ Widget : "contem"
+    Page ||--o{ PageView : "recebe"
+    Folder ||--o{ Widget : "agrupa"
+    DataConnection ||--o{ Widget : "alimenta"
+    Widget ||--o{ DataExportClick : "registra"
+
+    User {
+        string id PK
+        string email UK
+        string role
+    }
+    Session {
+        string id PK
+        string token UK
+        string userId FK
+        datetime expiresAt
+    }
+    DataConnection {
+        string id PK
+        string userId FK
+        string type "POSTGRESQL|MYSQL|SHEETS|CSV"
+        boolean isActive
+    }
+    Page {
+        string id PK
+        string userId FK "UK (1:1)"
+        string username UK
+        string themeId
+        boolean isPublished
+    }
+    Folder {
+        string id PK
+        string pageId FK
+        string name
+        string aiInsights "JSON (IA)"
+    }
+    Widget {
+        string id PK
+        string pageId FK
+        string folderId FK
+        string connectionId FK
+        string type "KPI|LINE|BAR|PIE|TABLE"
+        string query
+    }
+    PageView {
+        string id PK
+        string pageId FK
+        string ipHash
+        datetime accessedAt
+    }
+    DataExportClick {
+        string id PK
+        string widgetId FK
+        datetime clickedAt
+    }
+    Subscription {
+        string id PK
+        string userId FK "UK (1:1)"
+        string planType
+        string status
+        int tokenLimit
+    }
+```
+
+**Destaques:** `Page` e `Subscription` são 1:1 com `User`; `Widget` pode se ligar a uma `DataConnection` (fonte de dados) e a uma `Folder`. Modelado com Prisma ORM.
